@@ -1,0 +1,65 @@
+<html>
+<body>
+	<div onmouseover="changelight()" onmouseout="changeback()" class="mydiv" id="id1"  onclick="changecolor1()">
+		<p>11</p>
+	</div>
+	<div class="mydiv" onmouseover="changelight2()" onmouseout="changeback2()" id="id2" onclick="changecolor2()">
+		<p>22</p>
+	</div>
+	<div class="mydiv" onmouseover="changelight3()" onmouseout="changeback3()"  id="id3" onclick="changecolor3()">
+		<p>33</p>
+	</div>
+	<script>
+	function changecolor1 () {
+	document.getElementById("id1").style.backgroundColor='red';
+	document.getElementById('id2').style.backgroundColor='gray';
+	document.getElementById('id3').style.backgroundColor='gray';
+	}
+	function changecolor2 () {
+	document.getElementById("id1").style.backgroundColor='gray';
+	document.getElementById('id2').style.backgroundColor='red';
+	document.getElementById('id3').style.backgroundColor='gray';
+	}
+	function changecolor3 () {
+	document.getElementById("id1").style.backgroundColor='gray';
+	document.getElementById('id2').style.backgroundColor='gray';
+	document.getElementById('id3').style.backgroundColor='red';
+	}
+	function changelight () {
+		document.getElementById("id1").style.backgroundColor='yellow'
+	}
+	function changeback () {
+		document.getElementById("id1").style.backgroundColor='gray'
+	}
+		function changelight2 () {
+		document.getElementById("id2").style.backgroundColor='yellow'
+	}
+	function changeback2 () {
+		document.getElementById("id2").style.backgroundColor='gray'
+	}
+		function changelight3 () {
+		document.getElementById("id3").style.backgroundColor='yellow'
+	}
+	function changeback3 () {
+		document.getElementById("id3").style.backgroundColor='gray'
+	}
+	</script>
+<style>
+div
+{
+
+	background-color:gray;
+	background-size: 33%;
+}
+
+
+
+
+</style>
+
+
+
+
+
+	</body>
+</html>
