@@ -1,18 +1,4 @@
 <html>
-<head>
-
-<style>
-div
-{
-	height: 33%;
-	background-color:gray;
-}
-
-
-
-
-</style>
-</head>
 <body>
 	<div onmouseover="changelight()" onmouseout="changeback()" class="mydiv" id="id1"  onclick="changecolor1()">
 		<p>11</p>
@@ -58,6 +44,21 @@ div
 		document.getElementById("id3").style.backgroundColor='gray'
 	}
 	</script>
+<style>
+div
+{
+	height: 33%;
+	background-color:gray;
+}
+
+
+
+
+</style>
+
+
+
+
 
 	</body>
 </html>
