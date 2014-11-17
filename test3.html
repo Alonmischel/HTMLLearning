@@ -1,43 +1,55 @@
 <html>
 <head>
 
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <style>
-div
+.mydiv 
 {
-	height: 33%;
+	width: 33%;
+	height:100%;
 	background-color:gray;
+	float:left;
+	
 }
+.mydiv2
+{
 
+	height:33%;
+	background-color:gray;
 
-
-
+	
+}
 </style>
 </head>
 <body>
-	<div onmouseover="changelight()" onmouseout="changeback()" class="mydiv" id="id1"  onclick="changecolor1()">
+	<div onmouseover="changelight()" onmouseout="changeback()"  id="id1"  onclick="changecolor1()">
 		<p>11</p>
 	</div>
-	<div class="mydiv" onmouseover="changelight2()" onmouseout="changeback2()" id="id2" onclick="changecolor2()">
+	<div class="mydiv" onclick="ChangePos()" onmouseover="changelight2()" onmouseout="changeback2()" id="id2" >
 		<p>22</p>
 	</div>
-	<div class="mydiv" onmouseover="changelight3()" onmouseout="changeback3()"  id="id3" onclick="changecolor3()">
+	<div class="mydiv"  onmouseover="changelight3()" onmouseout="changeback3()"  id="id3" >
 		<p>33</p>
 	</div>
 	<script>
+	
+	$( document ).ready(function() {
+		$("div").addClass("mydiv");
+	});
+	
+	function ChangePos()
+	{
+	$('div').hide().delay(800).fadeIn(2200);
+	$("div").removeClass("mydiv");
+	
+	$("div").addClass("mydiv2");
+	
+	}
+	
 	function changecolor1 () {
 	document.getElementById("id1").style.backgroundColor='red';
-	document.getElementById('id2').style.backgroundColor='gray';
-	document.getElementById('id3').style.backgroundColor='gray';
-	}
-	function changecolor2 () {
-	document.getElementById("id1").style.backgroundColor='gray';
-	document.getElementById('id2').style.backgroundColor='red';
-	document.getElementById('id3').style.backgroundColor='gray';
-	}
-	function changecolor3 () {
-	document.getElementById("id1").style.backgroundColor='gray';
-	document.getElementById('id2').style.backgroundColor='gray';
-	document.getElementById('id3').style.backgroundColor='red';
+
 	}
 	function changelight () {
 		document.getElementById("id1").style.backgroundColor='yellow'
