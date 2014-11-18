@@ -2,26 +2,47 @@
 <head>
 
 <style>
-div
+.mydiv
 {
-	height: 33%;
+	height: 100%;
+	width: 33%;
+	float: left;
 	background-color:gray;
 }
 
+.mytab
+{
+		background-color: yellow;
+}
+div[data-type='tab1'] div{background-color: red;}
+div[data-type='tab2'] div{background-color: red;}
+div[data-type='tab3'] div{background-color: red;}
 
-
-
+.container{display: none;};
+div[data-type='tab1'] div.container{display: block;}
 </style>
 </head>
 <body>
-	<div onmouseover="changelight()" onmouseout="changeback()" class="mydiv" id="id1"  onclick="changecolor1()">
-		<p>11</p>
-	</div>
-	<div class="mydiv" onmouseover="changelight2()" onmouseout="changeback2()" id="id2" onclick="changecolor2()">
-		<p>22</p>
-	</div>
-	<div class="mydiv" onmouseover="changelight3()" onmouseout="changeback3()"  id="id3" onclick="changecolor3()">
-		<p>33</p>
+	<div data-type='tab1'>
+		<div id="tabsHeader">
+			<div class="mytab"  onmouseover="changelight()" onmouseout="changeback()" id="id1"  onclick="changecolor1()">
+				<p>11</p>
+			</div>
+			<div class="mytab" onmouseover="changelight2()" onmouseout="changeback2()" id="id2" onclick="changecolor2()">
+				<p>22</p>
+			</div>
+			<div class="mytab" onmouseover="changelight3()" onmouseout="changeback3()"  id="id3" onclick="changecolor3()">
+				<p>33</p>
+			</div>
+		</div>
+		<div id="containers">
+			<div class="container"> 
+			</div>
+			<div class="container">
+			</div>
+			<div class="container">
+			</div>
+		</div>
 	</div>
 	<script>
 	function changecolor1 () {
