@@ -1,0 +1,42 @@
+<html>
+<head>
+	<style type="text/css">
+
+	.mydiv
+	{
+		height: 50px;
+		width: 33%;
+		float: left;
+		background-color: gray;
+	}
+	</style>
+</head>
+<body margin="0" padding="0" >
+	<div class="mydiv" onclick="changecolor1()" id="tab1">
+		<p>First tab</p>
+	</div>
+	<div class="mydiv" onclick="changecolor2()" id="tab2">
+		<p>Second tab</p>
+	</div>
+<div class="mydiv" onclick="changecolor3()" id="tab3">
+	<p>Third tab</p>
+</div>
+<script type="text/javascript">
+	function changecolor1() {
+			document.getElementById('tab1').style.backgroundColor='blue'
+			document.getElementById('tab2').style.backgroundColor='gray'
+			document.getElementById('tab3').style.backgroundColor='gray'
+	}
+		function changecolor2 () {
+			document.getElementById('tab2').style.backgroundColor='blue'
+			document.getElementById('tab1').style.backgroundColor='gray'
+			document.getElementById('tab3').style.backgroundColor='gray'
+}
+		function changecolor3() {
+			document.getElementById('tab3').style.backgroundColor='blue'
+			document.getElementById('tab1').style.backgroundColor='gray'
+			document.getElementById('tab2').style.backgroundColor='gray'
+		}
+</script>
+</body>
+</html>
