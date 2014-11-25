@@ -1,7 +1,6 @@
 <html>
 <head>
 	<style type="text/css">
-
 	.mydiv
 	{
 		height: 50px;
@@ -14,16 +13,28 @@
 	}
 	</style>
 </head>
-<body margin="0" padding="0" >
-	<div class="mydiv" onclick="changecolor1()" id="tab1">
-		<p>First tab</p>
+<body>
+	<div class="mydiv" onclick="changecolor1()" onclick="textchange1()"id="tab1">
+		<center>First tab</center>
 	</div>
 	<div class="mydiv" onclick="changecolor2()" id="tab2">
-		<p>Second tab</p>
+		<center>Second tab</center>
 	</div>
 <div class="mydiv" onclick="changecolor3()" id="tab3">
-	<p>Third tab</p>
+	<center>Third tab</center>
 </div>
+
+
+<div id="textchange" style="display:none">
+	<p>This is the first paragrath in the first tab!</p>
+</div>
+<div id="textchange2" style="display:none">
+	<p>This is the first paragth in the second tab.</p>
+</div>
+<div id="textchange3" style="display:none">
+	<p>This is the first paragth in the third tab.</p>
+</div>
+
 <script type="text/javascript">
 	function changecolor1() {
 			document.getElementById('tab1').style.backgroundColor='blue'
@@ -39,6 +50,9 @@
 			document.getElementById('tab3').style.backgroundColor='blue'
 			document.getElementById('tab1').style.backgroundColor='gray'
 			document.getElementById('tab2').style.backgroundColor='gray'
+		}
+		function textchange1 () {
+			document.getElementById("textchange").style.display=''
 		}
 </script>
 </body>
