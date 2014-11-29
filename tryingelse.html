@@ -14,13 +14,13 @@
 	</style>
 </head>
 <body>
-	<div class="mydiv" onclick="changecolor1()" onclick="textchange1()"id="tab1">
+	<div class="mydiv" onclick="changecolor1(), textchange1()"id="tab1">
 		<center>First tab</center>
 	</div>
-	<div class="mydiv" onclick="changecolor2()" id="tab2">
+	<div class="mydiv" onclick="changecolor2(), textchange2()" id="tab2">
 		<center>Second tab</center>
 	</div>
-<div class="mydiv" onclick="changecolor3()" id="tab3">
+<div class="mydiv" onclick="changecolor3(), textchange3()" id="tab3">
 	<center>Third tab</center>
 </div>
 
@@ -53,6 +53,18 @@
 		}
 		function textchange1 () {
 			document.getElementById("textchange").style.display=''
+			document.getElementById("textchange2").style.display='none'
+			document.getElementById("textchange3").style.display='none'
+		}
+		function textchange2 () {
+			document.getElementById("textchange2").style.display=''
+			document.getElementById("textchange").style.display='none'
+			document.getElementById("textchange3").style.display='none'
+		}
+		function textchange3 () {
+			document.getElementById("textchange3").style.display=''
+			document.getElementById("textchange2").style.display='none'
+			document.getElementById("textchange").style.display='none'
 		}
 </script>
 </body>
