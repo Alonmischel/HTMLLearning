@@ -1,6 +1,7 @@
 <html>
 <head>
 	<style type="text/css">
+
 	#firstpic
 	{
 		height: 200px;
@@ -9,72 +10,119 @@
 
 
 	}
-	.mydiv
+	#tabsContainer > div
 	{
 		height: 50px;
 		width: 33%;
 		float: left;
 		background-color: gray;
 	}
+	#tabsContainer > .active
+	{
+		color: white;
+		background-color: blue;
+	}
+	.activecontainer
+	{
+		display: block;
+	}
+	.text
+	{
+		display: none;
+	}
 	body {
 	margin:0px;
 	}
+	#container1 ,
+	#container2 ,
+	#container3 
+	{
+		display: none;
+	}
+
+ 	[data-avtivetab="tab2"] #tab1 ,
+	[data-avtivetab="tab2"] #tab2 #tab1 ,
+	[data-avtivetab="tab2"] #tab3 #tab1 
+	{
+		background-color: yellow;
+	}
+	.tab1 #container1 ,
+	.tab2 #container2 ,
+	.tab3 #container3 
+	{
+		display: '';
+	}
 	</style>
 </head>
-<body>
-	<div class="mydiv" onclick="changecolor1(), textchange1()"id="tab1">
-		<center>First tab</center>
+<body onload="load()">
+<div data-avtivetab="tab1"> 
+	<div id="tabsContainer">
+		<div class="active" id="tab1">
+			<center>First tab</center>
+		</div>
+		<div class="" id="tab2">
+			<center>Second tab</center>
+		</div>
+		<div class="" id="tab3">
+			<center>Third tab</center>
+		</div>
 	</div>
-	<div class="mydiv" onclick="changecolor2(), textchange2()" id="tab2">
-		<center>Second tab</center>
+	<div id="contentContainer">
+		<div id="textchange" class="active">
+			<p>This is the first paragrath in the first tab!</p>
+			<img src="http://www.freshorigins.com/wp-content/uploads/2013/05/premium-flowers-assortment.jpg" alt="flower" id="firstpic">
+		</div>
+		<div id="textchange2" class="text">
+			<p>This is the first paragth in the second tab.</p>
+		</div>
+		<div id="textchange3" class="text">
+			<p>This is the first paragth in the third tab.</p>
+		</div>
 	</div>
-<div class="mydiv" onclick="changecolor3(), textchange3()" id="tab3">
-	<center>Third tab</center>
 </div>
-
-
-<div id="textchange" style="display:none">
-	<p>This is the first paragrath in the first tab!</p>
-	<img src="http://www.freshorigins.com/wp-content/uploads/2013/05/premium-flowers-assortment.jpg" alt="flower" id="firstpic">
-</div>
-<div id="textchange2" style="display:none">
-	<p>This is the first paragth in the second tab.</p>
-</div>
-<div id="textchange3" style="display:none">
-	<p>This is the first paragth in the third tab.</p>
-</div>
-
 <script type="text/javascript">
-	function changecolor1() {
-			document.getElementById('tab1').style.backgroundColor='blue'
-			document.getElementById('tab2').style.backgroundColor='gray'
-			document.getElementById('tab3').style.backgroundColor='gray'
-	}
-		function changecolor2 () {
-			document.getElementById('tab2').style.backgroundColor='blue'
-			document.getElementById('tab1').style.backgroundColor='gray'
-			document.getElementById('tab3').style.backgroundColor='gray'
+
+function load()
+{
+	document.getElementById("tab1").onclick = changecolor1;
+	document.getElementById("tab2").onclick = changecolor2;
+	document.getElementById("tab3").onclick = changecolor3;
+
 }
-		function changecolor3() {
-			document.getElementById('tab3').style.backgroundColor='blue'
-			document.getElementById('tab1').style.backgroundColor='gray'
-			document.getElementById('tab2').style.backgroundColor='gray'
-		}
-		function textchange1 () {
-			document.getElementById("textchange").style.display=''
-			document.getElementById("textchange2").style.display='none'
-			document.getElementById("textchange3").style.display='none'
-		}
-		function textchange2 () {
-			document.getElementById("textchange2").style.display=''
-			document.getElementById("textchange").style.display='none'
-			document.getElementById("textchange3").style.display='none'
-		}
-		function textchange3 () {
-			document.getElementById("textchange3").style.display=''
-			document.getElementById("textchange2").style.display='none'
-			document.getElementById("textchange").style.display='none'
-		}
+
+	function changecolor1() 
+	{
+			// set tabs
+			document.getElementById("tab1").className = 'active';
+			document.getElementById("tab2").className = ''
+			document.getElementById("tab3").className = ''
+			// set containers
+			document.getElementById("textchange").className = 'activecontainer'
+			document.getElementById("textchange2").className = 'text'
+			document.getElementById("textchange3").className = 'text'
+	}
+	function changecolor2 () 
+	{
+		// set tabs
+		document.getElementById("tab2").className = 'active'
+		document.getElementById("tab1").className = ''
+		document.getElementById("tab3").className = ''
+		// set containers
+		document.getElementById("textchange2").className = 'activecontainer'
+		document.getElementById("textchange").className = 'text'
+		document.getElementById("textchange3").className = 'text'
+	}
+	function changecolor3()
+	{
+		// set tabs 
+		document.getElementById("tab3").className = 'active'
+		document.getElementById("tab1").className = ''
+		document.getElementById("tab2").className = ''
+		// set containers
+		document.getElementById("textchange3").className = 'activecontainer'
+		document.getElementById("textchange2").className = 'text'
+		document.getElementById("textchange").className = 'text'
+	}
 </script>
 </body>
 </html>
